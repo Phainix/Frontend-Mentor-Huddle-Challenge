@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Poppins:700" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Frontend Mentor | Huddle landing page with single column layout</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        html {
+            overflow-x: hidden;
+        }
+        body {
+            font-size: 1.7vw;
+            background-color: white;
+            font-family: 'Open Sans', sans-serif;
+            overflow-x: hidden;
+            overflow-y: auto;
+            margin: 0;
+            line-height: 1.5;
+        }
+        .heading {
+            font-family: 'Poppins', sans-serif;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .greyish-blue {
+            color: hsl(208, 11%, 55%);
+        }
+        .dark-cyan {
+            color: hsl(192, 100%, 9%);
+        }
+        .white {
+            color: #ffffff;
+        }
+        .bg-pink {
+            background-color: hsl(322, 100%, 66%);
+        }
+        .bg-gradient {
+            background-color: #ff52bf;
+            background-image: linear-gradient(to right top, #ff52bf, #ff62bd, #ff71bc, #ff7fbc, #ff8cbd);
+        }
+        .bg-dark-cyan {
+            background-color: hsl(192, 100%, 9%);
+        }
+        .border-radius {
+            border-radius: .7vw;
+        }
+        .box-shadow {
+            box-shadow: 0px 0px 15px hsl(208, 15%, 85%);
+        }
+        h1.heading {
+            font-size: 200%;
+        }
+        .font60 {
+            font-size: 60%;
+        }
+        #app {
+            width: 100vw;
+        }
+        #header {
+            width: 100%;
+            padding: 5vw;
+            display: flex;
+        }
+        .logo {
+            flex: 0 0 18vw;
+        }
+        .logo > img {
+            width: 100%;
+        }
+        .main {
+            padding: 8vw 5vw;
+        }
+        .description {
+            padding: 0vw 20vw;
+        }
+        .mockup {
+            display: flex;
+            justify-content: center;
+            padding-top: 3vw;
+        }
+        .mockup > img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .sign-up {
+            padding: 8vw 0vw;
+        }
+        .sign-up-form {
+            padding: 2vw 16vw;
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-input {
+            padding: 1.7vw 2vw;
+            flex: 0 0 55%;
+            border: none;
+            font-size: 1.25vw;
+            font-family: 'Open Sans', sans-serif;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+        .btn {
+            padding: 1.7vw 2vw;
+            flex: 0 0 30%;
+            border: none;
+            font-size: 1.25vw;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        input.form-input::placeholder {
+            color: hsl(208, 11%, 70%);
+        }
+        .footer-container {
+            padding: 5vw;
+            display: flex;
+            /*flex-direction: column;*/
+        }
+        .footer-head {
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 18vw;
+        }
+        .footer-menu {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 70%;
+        }
+        .footer-menu li {
+            padding: 0vw 2vw;
+        }
+        .footer-menu li:last-of-type {
+            padding-right: 0vw;
+        }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            flex: 1;
+            align-items: flex-end;
+        }
+        .footer-icons {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            font-size: 160%;
+            margin-top: 2vw;
+        }
+        .footer-icons li {
+            padding: 0vw 1vw;
+        }
+        .footer-icons li:first-of-type {
+            padding-left: 0vw;
+        }
+        .logo-footer {
+            flex: 1;
+        }
+        .logo-footer img {
+            width: 100%;
+        }
+        .attribution { 
+            font-size: 45%; 
+            text-align: center;
+            margin: 0;
+            padding: 1em;
+        }
+        .attribution a { color: hsl(228, 45%, 44%); }
+        @media (max-width: 900px) {
+            body {
+                font-size: 2.1vw;
+            }
+            .logo, .footer-head {
+                flex: 0 0 20vw;
+            }
+            .description {
+                padding: 0vw 15vw;
+            }
+            .sign-up-form {
+                padding: 2vw 12vw;
+            }
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 2.6vw;
+            }
+            .description {
+                padding: 0vw 10vw;
+            }
+            .logo {
+                flex: 0 0 25vw;
+            }
+            .sign-up-form {
+                flex-direction: column;
+            }
+            .form-input {
+                margin-bottom: 1rem;
+                padding: 2vw 2.3vw;
+            }
+            .footer-container, .footer-menu {
+                flex-direction: column;
+            }
+            .footer-bottom {
+                align-items: flex-start;
+            }
+            .footer-head {
+                flex: auto;
+            }
+            .logo-footer {
+                flex: auto; 
+                width: 25vw;
+            }
+            .footer-menu {
+                align-items: flex-start;
+                margin: 4vw 0vw;
+            }
+            .footer-menu li {
+                padding: 1vw 0vw;
+            }
+            .footer-copy {
+                align-self: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header id="header" class="">
+            <div class="logo">
+                <img src="images/logo.svg" alt="">
+            </div>
+        </header><!-- /header -->
+        <div class="main">
+            <h1 class="heading text-center dark-cyan">Build The Community Your Fans Will Love</h1>
+
+            <p class="greyish-blue description text-center">Huddle re-imagines the way we build communities. You have a voice, but so does 
+            your audience. Create connections with your users as you engage in genuine discussion.<p>
+
+            <div class="mockup">
+                <img src="images/screen-mockups.svg" alt="">
+            </div>
+            
+            <div class="sign-up">
+                <h1 class="heading text-center dark-cyan">Sign Up For Early Access</h1>
+
+                <form action="" method="get" accept-charset="utf-8" class="sign-up-form">
+                    <input type="text" name="" value="" placeholder="email@example.com" class="form-input border-radius box-shadow greyish-blue">
+                    <button type="submit" class="btn bg-gradient border-radius box-shadow white">Register</button>
+                </form>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container bg-dark-cyan white">
+                <div class="footer-head">
+                    <div class="logo-footer">
+                        <img src="images/logo-white.svg" alt="">
+                    </div>
+                    <ul class="footer-icons">
+                        <li><i class="fa fa-facebook-square"></i></li>
+                        <li><i class="fa fa-instagram"></i></li>
+                        <li><i class="fa fa-twitter-square"></i></li>
+                    </ul>
+                </div>
+                <div class="footer-bottom">
+                    <ul class="footer-menu">
+                        <li>About Us</li>
+                        <li>What We Do</li>
+                        <li>FAQ</li>
+                        <li>Career</li>
+                        <li>Blog</li>
+                        <li>Contact Us</li>
+                    </ul>
+                    <span class="font60 footer-copy">&copy; 2018 Huddle Copyright</span>
+                </div>
+            </div>
+            <p class="attribution">
+              This page started life as a challenge on <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a> 🎉
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
